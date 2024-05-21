@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PrivateBlog.Web.Data;
 using PrivateBlog.Web.Services;
-using AspNetCoreHero.ToastNotification;
-using AspNetCoreHero.ToastNotification.Extensions;
+
 
 namespace PrivateBlog.Web
 {
