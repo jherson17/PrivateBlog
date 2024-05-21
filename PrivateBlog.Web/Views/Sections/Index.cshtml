@@ -1,0 +1,36 @@
+﻿@model IEnumerable<PrivateBlog.Web.Data.Entities.Section>
+
+@{
+    ViewData["Title"] = "Index"; // Establece el título de la página.
+}
+@* //estan heredando de layaout *@
+<h1>Sections</h1>
+<!-- Enlace para dirigirse a la acción 'Create' del controlador -->
+<a class="btn btn-info" asp-action="Create">Sections</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <!--
+                Esta línea genera un encabezado de columna de una tabla para el nombre.
+                Html.DisplayNameFor(model => model.Name) utiliza la reflexión para obtener el nombre de la propiedad "Name" del modelo.
+                Esto permite mostrar el nombre legible de la propiedad, definido mediante DataAnnotations, en lugar del nombre exacto de la propiedad.
+            -->
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.IsHidden)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                
+                <td>@Html.DisplayFor(modelItem => @item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => @item.IsHidden)</td>
+                
+
+            </tr>
+        }
+    </tbody>
+</table>
